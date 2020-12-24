@@ -45,6 +45,31 @@ type ChampionType {
   stats: StatsType!
 }
 
+type ChampionMasteryType {
+  championPointsUntilNextLevel: String!
+  chestGranted: Float!
+  championId: ID!
+  lastPlayTime: String!
+  championLevel: Int!
+  summonerId: ID!
+  championPoints: Int!
+  championPointsSinceLastLevel: String!
+  tokensEarned: Int!
+}
+
+type SummonerType {
+  profileIconId: ID!
+  name: String!
+  puuid: ID!
+  summonerLevel: Int!
+  revisionDate: String!
+  id: ID!
+  accountId: ID!
+}
+
 type Query {
   getChamps: [ChampionType!]!
+  getChampionById(championId: String!): ChampionType!
+  getSummonerByName(platform: String!, name: String!): SummonerType!
+  getChampionsMasteryBySummonerId(platform: String!, summonerId: String!): [ChampionMasteryType!]!
 }
