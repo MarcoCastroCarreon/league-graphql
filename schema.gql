@@ -9,7 +9,7 @@ type InfoType {
   difficulty: Int!
 }
 
-type StatsType {
+type ChampionStatsType {
   hp: Float!
   hpperlevel: Float!
   mp: Float!
@@ -42,7 +42,71 @@ type ChampionType {
   info: InfoType!
   tags: [String!]!
   partype: String!
-  stats: StatsType!
+  stats: ChampionStatsType!
+}
+
+type EffectType {
+  Effect1Amount: String
+  Effect2Amount: String
+  Effect3Amount: String
+  Effect4Amount: String
+  Effect5Amount: String
+  Effect6Amount: String
+  Effect7Amount: String
+  Effect8Amount: String
+  Effect9Amount: String
+  Effect10Amount: String
+  Effect11Amount: String
+  Effect12Amount: String
+  Effect13Amount: String
+  Effect14Amount: String
+  Effect15Amount: String
+  Effect16Amount: String
+  Effect17Amount: String
+  Effect18Amount: String
+}
+
+type GoldType {
+  base: Int!
+  purchasable: Boolean!
+  total: Int!
+  sell: Int!
+}
+
+type ItemImageType {
+  full: String!
+  sprite: String!
+  group: String!
+  x: Int!
+  y: Int!
+  w: Int!
+  h: Int!
+}
+
+type MapsType {
+  summonersRift: Boolean!
+  howlingAbyss: Boolean!
+}
+
+type ItemStatsType {
+  FlatHPPoolMod: Int
+  FlatMagicDamageMod: Int
+}
+
+type ItemType {
+  name: String!
+  description: String!
+  colloq: String!
+  plaintext: String!
+  specialRecipe: Int!
+  inStore: Boolean
+  image: ItemImageType!
+  gold: GoldType!
+  tags: [String!]!
+  maps: MapsType!
+  stats: ItemStatsType
+  effect: EffectType
+  depth: Int
 }
 
 type ChampionMasteryType {
@@ -70,6 +134,7 @@ type SummonerType {
 type Query {
   getChamps: [ChampionType!]!
   getChampionById(championId: String!): ChampionType!
+  getItems: [ItemType!]!
   getSummonerByName(platform: String!, name: String!): SummonerType!
   getChampionsMasteryBySummonerId(platform: String!, summonerId: String!): [ChampionMasteryType!]!
 }

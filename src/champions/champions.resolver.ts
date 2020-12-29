@@ -20,6 +20,6 @@ export class ChampionsResolver {
 
     const champion = champsData.filter((champ) => champ.key === championId);
 
-    return champion[0];
-  }
+    return champion.length > 0 && champion[0];
+  };
 }

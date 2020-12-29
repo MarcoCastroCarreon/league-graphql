@@ -1,6 +1,6 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { InfoType } from './info.champion';
-import { StatsType } from './stats.champion';
+import { ChampionStatsType } from './stats.champion';
 
 @ObjectType()
 export class ChampionType {
@@ -23,5 +23,5 @@ export class ChampionType {
   @Field()
   partype: string;
   @Field()
-  stats: StatsType;
+  stats: ChampionStatsType;
 }

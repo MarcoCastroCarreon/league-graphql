@@ -1,7 +1,7 @@
 import { Field, Float, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class StatsType {
+export class ChampionStatsType {
   @Field((type) => Float)
   hp: number;
   @Field((type) => Float)
